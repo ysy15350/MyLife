@@ -1,8 +1,10 @@
 package com.ysy15350.mylife;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -37,23 +39,35 @@ public class MainActivity extends MVPBaseActivity<MainViewInterface, MainPresent
         Log.i("main", "onCreate");
 
         super.onCreate(savedInstanceState);
+
+        //代码方式填满状态栏
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
+//            localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
+//        }
+
+
+    }
+
+    @Event(value = R.id.ll_menu1)
+    private void ll_menu1Click(View view) {
+
     }
 
 
-
-    /**
-     * 1. 方法必须私有限定,
-     * 2. 方法参数形式必须和type对应的Listener接口一致.
-     * 3. 注解参数value支持数组: value={id1, id2, id3}
-     * 4. 其它参数说明见{@link org.xutils.event.annotation.Event}类的说明.
-     **/
-    @Event(value = R.id.btn_test,
-            type = View.OnClickListener.class/*可选参数, 默认是View.OnClickListener.class*/)
-    private void onTestBaidu1Click(View view) {
-
-        Toast.makeText(MainActivity.this, "hehe", Toast.LENGTH_SHORT).show();
-        //mPresenter.signin();
-
-    }
+//    /**
+//     * 1. 方法必须私有限定,
+//     * 2. 方法参数形式必须和type对应的Listener接口一致.
+//     * 3. 注解参数value支持数组: value={id1, id2, id3}
+//     * 4. 其它参数说明见{@link org.xutils.event.annotation.Event}类的说明.
+//     **/
+//    @Event(value = R.id.btn_test,
+//            type = View.OnClickListener.class/*可选参数, 默认是View.OnClickListener.class*/)
+//    private void onTestBaidu1Click(View view) {
+//
+//        Toast.makeText(MainActivity.this, "hehe", Toast.LENGTH_SHORT).show();
+//        //mPresenter.signin();
+//
+//    }
 
 }

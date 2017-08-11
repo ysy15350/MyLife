@@ -2,46 +2,172 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    style="@style/base_form">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/form_height"
-        android:orientation="horizontal">
+    <!--顶部-->
+    <RelativeLayout
+        style="@style/base_layout"
+        android:layout_height="@dimen/dp225"
+        android:background="@mipmap/bg_main_top">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="@dimen/dp80"
+            android:layout_height="@dimen/dp40"
+            android:layout_alignParentRight="true"
+
+            android:gravity="center"
             android:orientation="horizontal">
 
+            <ImageView
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp20"
+                android:src="@mipmap/icon_edit" />
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:text="重庆" />
+                style="@style/text_content"
+                android:layout_marginLeft="@dimen/dp13"
+                android:text="@string/edit" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_user"
+            android:layout_width="@dimen/dp90"
+            android:layout_height="@dimen/dp90"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/icon_head" />
+
+        <TextView
+            style="@style/text_content"
+            android:layout_below="@id/img_user"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp20"
+            android:text="@string/default_text" />
+
+    </RelativeLayout>
+
+    <!--顶部end-->
+
+    <!--菜单1-->
+    <LinearLayout style="@style/main_menu_row">
+
+        <!--左边区域-->
+        <LinearLayout
+            android:id="@+id/ll_menu1"
+            style="@style/main_menu_col">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ico_back" />
+                style="@style/main_menu_icon"
+                android:src="@mipmap/icon_menu1" />
+
+            <TextView
+                style="@style/text_content"
+                android:layout_marginLeft="@dimen/dp13"
+                android:text="@string/app_name" />
 
         </LinearLayout>
 
+        <!--分割线-->
+        <View style="@style/view_line_vertical" />
+
+        <!--右边区域-->
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="@dimen/dp40"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_rectangle_search">
+            android:id="@+id/ll_menu2"
+            style="@style/main_menu_col">
 
-            <Button
-                android:id="@+id/btn_test"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <ImageView
+                style="@style/main_menu_icon"
+                android:src="@mipmap/icon_menu1" />
+
+            <TextView
+                style="@style/text_content"
+                android:layout_marginLeft="@dimen/dp13"
+                android:text="@string/app_name" />
+
         </LinearLayout>
-
 
     </LinearLayout>
+
+    <!--菜单2-->
+    <LinearLayout style="@style/main_menu_row">
+
+        <!--左边区域-->
+        <LinearLayout
+            android:id="@+id/ll_menu3"
+            style="@style/main_menu_col">
+
+            <ImageView
+                style="@style/main_menu_icon"
+                android:src="@mipmap/icon_menu1" />
+
+            <TextView
+                style="@style/text_content"
+                android:layout_marginLeft="@dimen/dp13"
+                android:text="@string/app_name" />
+
+        </LinearLayout>
+
+        <!--分割线-->
+        <View style="@style/view_line_vertical" />
+
+        <!--右边区域-->
+        <LinearLayout
+            android:id="@+id/ll_menu4"
+            style="@style/main_menu_col">
+
+            <ImageView
+                style="@style/main_menu_icon"
+                android:src="@mipmap/icon_menu1" />
+
+            <TextView
+                style="@style/text_content"
+                android:layout_marginLeft="@dimen/dp13"
+                android:text="@string/app_name" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--菜单3-->
+    <LinearLayout style="@style/main_menu_row">
+
+        <!--左边区域-->
+        <LinearLayout
+            android:id="@+id/ll_menu5"
+            style="@style/main_menu_col">
+
+            <ImageView
+                style="@style/main_menu_icon"
+                android:src="@mipmap/icon_menu1" />
+
+            <TextView
+                style="@style/text_content"
+                android:layout_marginLeft="@dimen/dp13"
+                android:text="@string/app_name" />
+
+        </LinearLayout>
+
+        <!--分割线-->
+        <View style="@style/view_line_vertical" />
+
+        <!--右边区域-->
+        <LinearLayout
+            android:id="@+id/ll_menu6"
+            style="@style/main_menu_col">
+
+            <ImageView
+                style="@style/main_menu_icon"
+                android:src="@mipmap/icon_menu1" />
+
+            <TextView
+                style="@style/text_content"
+                android:layout_marginLeft="@dimen/dp13"
+                android:text="@string/app_name" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </LinearLayout>

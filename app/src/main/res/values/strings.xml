@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">MyLife</string>
 
+    <string name="default_text">-</string>
+
     <!-- 首页选项卡文本 -->
     <string name="tab1name">首页</string>
     <string name="tab2name">影约</string>
     <string name="tab3name">信息</string>
     <string name="tab4name">个人</string>
+
+    <string name="edit">编辑</string>
 
     <string name="previous">上一个</string>
     <string name="next">下一个</string>

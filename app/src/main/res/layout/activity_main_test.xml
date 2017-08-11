@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/base_from"
+    style="@style/base_form"
     android:orientation="vertical" >
 
     <FrameLayout
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp30"
         android:alpha="0.9"
-        android:background="@color/btn_color1"
+        android:background="@color/btn_normal"
         android:gravity="center"
         android:visibility="gone" >
 
