@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="#000000">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8.0dip"
+        android:layout_marginRight="10dp" 
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginTop="3.0dip"
+        android:layout_toLeftOf="@+id/button"
+        android:layout_toRightOf="@id/image"
+        android:text="This is the text"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text"
+        android:layout_alignTop="@+id/image"
+        android:textStyle="bold"
+        android:text="title"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/image"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:text="跳转"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>

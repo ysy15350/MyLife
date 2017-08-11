@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+     <!-- 二维码 -->
+    <declare-styleable name="QrCode">
+        <attr name="iconWidth" format="dimension" />
+        <attr name="iconHeight" format="dimension" />
+        <attr name="qrCodeWidth" format="dimension" />
+        <attr name="qrCodeHeight" format="dimension" />
+        <attr name="url" format="string" />
+    </declare-styleable>
+
+    <!-- gif图片 -->
+    <declare-styleable name="PowerImageView">
+        <attr name="auto_play" format="boolean"></attr>
+        <attr name="loop_play" format="boolean"></attr>
+        <attr name="url_img" format="string"></attr>
+        <attr name="play_img" format="reference"></attr>
+    </declare-styleable>
+
+    <!-- 圆角图片 -->
+    <attr name="borderRadius" format="dimension" />
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+
+    <!-- 圆角图片 -->
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius" />
+        <attr name="type" />
+    </declare-styleable>
+
+</resources>

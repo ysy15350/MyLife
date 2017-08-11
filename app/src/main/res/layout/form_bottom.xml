@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp50"
+    android:layout_alignParentBottom="true"
+    android:gravity="center_vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.6"
+        android:background="#000000" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <LinearLayout
+            android:id="@+id/ll_tab1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/dp5" >
+
+            <ImageView
+                android:id="@+id/img_tab1"
+                android:layout_width="@dimen/dp40"
+                android:layout_height="@dimen/dp40"
+                android:contentDescription="@string/tab1name"
+                android:src="@drawable/selector_tab1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_tab2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/img_tab2"
+                android:layout_width="@dimen/dp40"
+                android:layout_height="@dimen/dp40"
+                android:contentDescription="@string/tab2name"
+                android:src="@drawable/selector_tab2" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_tab3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/img_tab3"
+                android:layout_width="@dimen/dp40"
+                android:layout_height="@dimen/dp40"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/tab3name"
+                android:src="@drawable/selector_tab3" />
+
+            <ImageView
+                android:id="@+id/img_tab3_dot"
+                android:layout_width="@dimen/dp8"
+                android:layout_height="@dimen/dp8"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_toRightOf="@id/img_tab3"
+                android:contentDescription="@string/tab3name"
+                android:src="@mipmap/dot_focus"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_tab4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/img_tab4"
+                android:layout_width="@dimen/dp40"
+                android:layout_height="@dimen/dp40"
+                android:contentDescription="@string/tab4name"
+                android:src="@drawable/selector_tab4" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,124 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="base_from">
+        <item name="android:background">@color/background_form</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- 对话框主题 -->
+    <style name="DialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="base_form">
+        <item name="android:background">@color/background_form</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- 共用层样式 -->
+    <style name="base_layout">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp60</item>
+        <item name="android:paddingTop">@dimen/dp15</item>
+        <item name="android:paddingBottom">@dimen/dp15</item>
+        <item name="android:paddingLeft">@dimen/dp15</item>
+        <item name="android:paddingRight">@dimen/dp15</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+
+
+    <!-- 项目详情标题样式 -->
+    <style name="textview_tab3_color1">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/txt_normal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!-- 文本右边箭头样式 -->
+    <style name="img_arrow">
+        <item name="android:layout_width">13dp</item>
+        <item name="android:layout_height">13dp</item>
+        <item name="android:src">@mipmap/ico_39</item>
+    </style>
+
+    <!-- view分割线样式 -->
+    <style name="bg_line_vertical_tab4">
+        <item name="android:layout_width">0.1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">#777777</item>
+    </style>
+
+    <!-- 文本输入框基本样式 -->
+    <style name="base_edit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp60</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/txt_normal</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">@color/txt_hint</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <!-- 文本输入框 -->
+    <style name="edit_content" parent="base_edit">
+        <item name="android:layout_marginLeft">@dimen/dp10</item>
+    </style>
+
+    <!-- 密码输入框 -->
+    <style name="edit_content_password" parent="base_edit">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:inputType">textPassword</item>
+    </style>
+
+    <!-- view分割线样式 -->
+    <style name="bg_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.1dp</item>
+        <item name="android:background">@color/devide_line</item>
+    </style>
+
+    <!-- view分割线样式内容部分使用 -->
+    <style name="bg_line_short" parent="bg_line">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <!-- view分割线样式内容部分使用,对话框 -->
+    <style name="bg_line_short_red" parent="bg_line_short">
+        <item name="android:background">@color/formhead_bgColor</item>
+        <item name="android:layout_height">2dp</item>
+    </style>
+
+    <!-- 弹窗菜单效果,底部出现 -->
+    <style name="app_pop">
+        <item name="android:windowEnterAnimation">@anim/pop_up</item>
+        <item name="android:windowExitAnimation">@anim/pop_down</item>
+    </style>
+
+
+    <!-- 微信 -->
+
+
+</resources>

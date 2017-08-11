@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/normal_button_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonListener"
+        android:text="普通的通知" />
+
+    <Button
+        android:id="@+id/view_button_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonListener"
+        android:text="较为特别的通知" />
+
+    <Button
+        android:id="@+id/private_button_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonListener"
+        android:text="自定义布局的通知" />
+
+    <Button
+        android:id="@+id/big_button_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonListener"
+        android:text="可以显示多行信息的通知" />
+
+    <Button
+        android:id="@+id/progress_button_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonListener"
+        android:text="有进度条的通知" />
+
+    <Button
+        android:id="@+id/pic_button_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonListener"
+        android:text="有大图片的通知" />
+
+    <Button
+        android:id="@+id/btn_button_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonListener"
+        android:text="有两个按钮的通知" />
+
+    <Button
+        android:id="@+id/clear_button_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:onClick="buttonListener"
+        android:text="清除所有的通知" />
+
+
+</LinearLayout>

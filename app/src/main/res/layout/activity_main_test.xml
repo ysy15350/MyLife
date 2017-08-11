@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/base_from"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/id_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_message"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp30"
+        android:alpha="0.9"
+        android:background="@color/btn_color1"
+        android:gravity="center"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="你有新消息"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/ll_close"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp20"
+                android:src="@mipmap/icon_close" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/form_bottom"
+        layout="@layout/form_bottom" />
+
+</RelativeLayout>
