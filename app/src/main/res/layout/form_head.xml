@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#000000"
-    android:alpha="0.85"
-    android:orientation="vertical" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_head"
+    style="@style/form_title_layout"
+    android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp50"
-        android:orientation="horizontal" >
+        style="@style/form_title_layout"
+        android:layout_marginTop="@dimen/dp30">
+
+
+        <TextView
+            android:id="@+id/tv_form_title"
+            style="@style/form_title" />
 
         <ImageButton
             android:id="@+id/btn_back"
@@ -20,29 +22,27 @@
             android:contentDescription="@string/app_name"
             android:padding="@dimen/dp10"
             android:scaleType="fitCenter"
-            android:src="@mipmap/ico_back" />
-
-        <TextView
-            android:id="@+id/tv_form_title"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp30"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:text="@string/app_name"
-            android:textColor="@color/white"
-            android:textSize="@dimen/sp18" />
+            android:src="@mipmap/icon_back"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tv_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/dp10"
-            android:gravity="center"
-            android:text="完成"
-            android:textColor="@color/white"
-            android:textSize="@dimen/sp14"
+            style="@style/form_select_text"
             android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/rl_menu"
+            style="@style/form_select"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_menu"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_search" />
+        </RelativeLayout>
+
     </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

@@ -133,7 +133,7 @@ public class ViewHolder {
      * @param text   文本内容
      * @return
      */
-    public ViewHolder setText(int viewId, String text) {
+    public ViewHolder setText(int viewId, CharSequence text) {
         try {
             View view = getView(viewId);
             if (view != null) {
@@ -192,6 +192,18 @@ public class ViewHolder {
     }
 
     /**
+     * 设置控件背景图片
+     *
+     * @param viewId
+     * @param drawable drawableId图片
+     * @return
+     */
+    public ViewHolder setBackgroundColor(int viewId, int color) {
+
+        return this;
+    }
+
+    /**
      * 设置TextView文本颜色
      *
      * @param viewId
@@ -203,6 +215,15 @@ public class ViewHolder {
             TextView textView = getView(viewId);
             if (textView != null && color != 0) {
                 textView.setTextColor(mContext.getResources().getColor(color));
+            }
+            View view = getView(viewId);
+            if (view != null) {
+                if (view instanceof TextView) {
+                    ((TextView) textView).setTextColor(mContext.getResources().getColor(color));
+                }
+                if (view instanceof EditText) {
+                    ((EditText) view).setTextColor(mContext.getResources().getColor(color));
+                }
             }
         } catch (Exception e) {
 

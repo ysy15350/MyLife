@@ -18,10 +18,13 @@
     <!-- ***********************背景颜色*********************** -->
 
     <!-- 窗体默认背景颜色 -->
-    <color name="bg_from">#eeeeee</color>
+    <color name="bg_form">#eeeeee</color>
 
-    <!-- 窗体标题栏背景颜色 -->
-    <color name="bg_form_head">#2a2c2d</color>
+    <!-- 窗体标题背景色 -->
+    <color name="bg_form_head">#22252c</color>
+
+    <!-- 密码文本框背景颜色 -->
+    <color name="bg_password">#50194e5f</color>
 
 
     <!-- ***********************背景颜色end*********************** -->

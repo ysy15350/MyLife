@@ -2,8 +2,6 @@ package com.ysy15350.mylife.recyclerview;
 
 import android.content.Context;
 
-import com.ysy15350.mylife.test.TestViewInterface;
-
 import java.util.ArrayList;
 import java.util.List;
 

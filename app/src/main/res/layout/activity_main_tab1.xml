@@ -2,8 +2,82 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/base_form">
 
+    <include layout="@layout/form_head" />
+
+    <custom_view.scroll_view.PullDownScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <custom_view.scroll_view.ScrollViewExtend
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ll_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et_url"
+                    style="@style/base_edit"
+                    android:layout_marginTop="@dimen/dp13"
+                    android:text="http://www.ysy15350.com/interest/appuser/test" />
+
+                <EditText
+                    android:id="@+id/et_param"
+                    style="@style/base_edit"
+                    android:layout_marginTop="@dimen/dp13"
+                    android:text="admin" />
+
+                <LinearLayout
+                    style="@style/base_layout_horizontal"
+                    android:layout_marginTop="@dimen/dp13">
+
+                    <EditText
+                        android:id="@+id/et_cache_time"
+                        android:layout_width="@dimen/dp100"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:text="10"
+                        android:textColor="@color/text_content" />
+
+                    <View style="@style/view_line_vertical" />   
 
 
+                    <CheckBox
+                        android:id="@+id/cb_cache"
+                        style="@style/checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp25"
+                        android:layout_marginLeft="@dimen/dp13"
+                        android:text="使用缓存"
+                        android:textColor="@color/text_content" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_ok"
+                    style="@style/btn_ok" />
+
+                <TextView
+                    android:id="@+id/tv_response_time"
+                    style="@style/text_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp13"
+                    android:text="响应时间" />
+
+                <TextView
+                    android:id="@+id/tv_result"
+                    style="@style/text_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp13"
+                    android:text="请求结果" />
 
 
+            </LinearLayout>
+        </custom_view.scroll_view.ScrollViewExtend>
+    </custom_view.scroll_view.PullDownScrollView>
 </LinearLayout>

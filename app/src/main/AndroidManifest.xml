@@ -17,11 +17,36 @@
             </intent-filter>
         </activity>
 
-        <!-- 测试页 -->
+        <!-- fragment -->
         <activity
-            android:name="com.ysy15350.mylife.test.TestActivity"
-            android:launchMode="singleTask">
-        </activity>
+            android:name="com.ysy15350.mylife.fragment.FragmentPagerActivity"
+            android:launchMode="singleTask"></activity>
+
+        <!-- fragment -->
+        <activity
+            android:name="com.ysy15350.mylife.fragment.FragmentMainActivity"
+            android:launchMode="singleTask"></activity>
+
+
+        <!--recyclerview-->
+        <activity
+            android:name="com.ysy15350.mylife.recyclerview.RecyclerviewActivity"
+            android:launchMode="singleTask"></activity>
+
+        <!--recyclerview-->
+        <activity
+            android:name="com.ysy15350.mylife.recyclerview_1.Recycler3Activity"
+            android:launchMode="singleTask"></activity>
+
+        <!--环信登录-->
+        <activity
+            android:name=".chat.LoginActivity"
+            android:launchMode="singleTask"></activity>
+
+        <!--环信主界面-->
+        <activity
+            android:name=".chat.MainActivity"
+            android:launchMode="singleTask"></activity>
 
         <!-- 设置环信应用的appkey -->
         <meta-data
@@ -30,8 +55,7 @@
         <!-- 声明sdk所需的service -->
         <service
             android:name="com.hyphenate.chat.EMChatService"
-            android:exported="true"
-            />
+            android:exported="true" />
         <service
             android:name="com.hyphenate.chat.EMJobService"
             android:exported="true"

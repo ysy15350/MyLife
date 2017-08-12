@@ -2,12 +2,16 @@ package com.ysy15350.mylife.chat;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
 import com.hyphenate.EMCallBack;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
+import com.hyphenate.chat.EMMessageBody;
 import com.hyphenate.chat.EMTextMessageBody;
 import com.hyphenate.exceptions.HyphenateException;
 
@@ -39,110 +43,38 @@ public class MainPresenter extends BasePresenter<MainViewInterface> implements E
         EMClient.getInstance().chatManager().addMessageListener(this);
     }
 
-    private int page = 1;
 
-    private int pageSize = 10;
-
-    Type dataType;
-
-    public void test() {
-
-
-        Type genType = this.getClass().getGenericSuperclass();
-
-        try {
-            if (genType != null) {
-                Type[] types = ((ParameterizedType) genType).getActualTypeArguments();
-
-                if (types != null && types.length > 0)
-                    dataType = types[0];
-            }
-
-        } catch (Exception e) {
-
-        }
-
-        if (dataType != null) {
-
-            String typeString = dataType.toString();
-
-            if ("class java.lang.Object".equals(typeString) || typeString.contains("Response")) {
-                dataType = null;// 默认Response(class
-                // framework_movie_friend.Response)
-            }
-        }
-
-        IUser userApi = new UserApi();
-
-
-        userApi.userLogin("admin", "123456", new ApiCallBack() {
-
-
-            @Override
-            public void onSuccess(boolean isCache, String data) {
-
-                if (!StringUtils.isEmpty(data)) {
-
-
-                    Response response = JsonConvertor.fromJson(data, Response.class);
-
-                    if (response != null) {
-
-                        mView.loginSuccess(isCache + "," + response.getResult());
-                    }
-                }
-            }
-
-            @Override
-            public void onFailed(String msg) {
-
-            }
-        });
-
-
-    }
-
-    private static String TAG = "mylife";
-
-    /**
-     * 注册
-     */
-    public void signup(final String username, final String password) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    EMClient.getInstance().createAccount(username, password);
-                    Log.e(TAG, "注册成功");
-                } catch (HyphenateException e) {
-                    e.printStackTrace();
-
-                    Log.e(TAG, "注册失败" + e.getErrorCode() + "," + e.getMessage());
-                }
-            }
-        }).start();
-
-    }
-
-    public void signin(String username, String password) {
-        EMClient.getInstance().login(username, password, new EMCallBack() {
+    public void loginOut() {
+        EMClient.getInstance().logout(true, new EMCallBack() {
             @Override
             public void onSuccess() {
+                Message message = new Message();
+                message.what = 200;
 
-                Log.e(TAG, "登录成功");
+                Bundle data = new Bundle();
+                data.putString("msg", "注销成功");
 
+                message.setData(data);
+                mHandler.sendMessage(message);
             }
 
             @Override
             public void onError(int i, String s) {
+                Message message = new Message();
+                message.what = 201;
 
+                Bundle data = new Bundle();
+                data.putString("msg", i + s);
+
+                message.setData(data);
+                mHandler.sendMessage(message);
             }
 
             @Override
             public void onProgress(int i, String s) {
 
             }
-        });
+        });//登录前先注销登录，因为登录其他账户会提示User is already login
     }
 
     public void sendMessage(String msg, String toUserName) {
@@ -170,15 +102,26 @@ public class MainPresenter extends BasePresenter<MainViewInterface> implements E
 
     @Override
     public void onMessageReceived(List<EMMessage> list) {
+
         for (final EMMessage message :
                 list) {
+
             ((Activity) mContext).runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+
+                    EMMessageBody msgBody = message.getBody();
+                    if(msgBody instanceof  EMTextMessageBody){
+                        EMTextMessageBody textMessageBody=(EMTextMessageBody)msgBody;
+
+                    }
+
                     mView.setText(((EMTextMessageBody) message.getBody()).getMessage());
+
                 }
             });
         }
+
     }
 
     @Override
@@ -200,4 +143,37 @@ public class MainPresenter extends BasePresenter<MainViewInterface> implements E
     public void onMessageChanged(EMMessage emMessage, Object o) {
 
     }
+
+
+    Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+
+            if (msg == null)
+                return;
+
+            Bundle data = msg.getData();
+
+            int type = 0;
+            String message = "";
+
+            if (data != null) {
+                type = data.getInt("type");
+                message = data.getString("msg");
+            }
+
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 200:
+                    mView.loginOutCallback(type, "成功：" + message);
+                    break;
+                case 201:
+
+                    mView.loginOutCallback(type, "失败：" + message);
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 }

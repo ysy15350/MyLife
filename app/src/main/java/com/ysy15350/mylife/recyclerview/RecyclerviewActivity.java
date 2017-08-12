@@ -11,17 +11,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ysy15350.mylife.R;
-import com.ysy15350.mylife.test.TestPresenter;
-import com.ysy15350.mylife.test.TestViewInterface;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
-import org.xutils.view.annotation.ViewInject;
 
 import java.util.List;
 
@@ -93,10 +89,15 @@ public class RecyclerviewActivity extends MVPBaseActivity<RecyclerViewInterface,
         //GridView
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 3);//3列
 
-        //水平GridView
-        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
 
-        recyclerview.setLayoutManager(linearLayoutManager);
+        //StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+
+        //水平GridView
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL);
+
+        //recyclerview.setLayoutManager(linearLayoutManager);
+        //recyclerview.setLayoutManager(gridLayoutManager);
+        recyclerview.setLayoutManager(staggeredGridLayoutManager);
 
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST);
 

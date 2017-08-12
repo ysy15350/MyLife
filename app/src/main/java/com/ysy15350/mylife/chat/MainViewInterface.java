@@ -6,11 +6,9 @@ package com.ysy15350.mylife.chat;
 
 public interface MainViewInterface {
 
-    public void test();
 
     public void setText(String text);
 
-
-    public void loginSuccess(String result);
+    public void loginOutCallback(int ret, String result);
 
 }

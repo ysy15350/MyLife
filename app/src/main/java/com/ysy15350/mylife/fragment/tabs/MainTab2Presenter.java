@@ -1,6 +1,13 @@
-package com.ysy15350.mylife.test.tabs;
+package com.ysy15350.mylife.fragment.tabs;
 
 import android.content.Context;
+import android.widget.Toast;
+
+import org.xutils.common.Callback;
+import org.xutils.ex.HttpException;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
+
 import base.BasePresenter;
 
 public class MainTab2Presenter extends BasePresenter<MainTab2ViewInterface> {
@@ -27,6 +34,8 @@ public class MainTab2Presenter extends BasePresenter<MainTab2ViewInterface> {
 		this.page = page;
 		return this;
 	}
+
+
 
 
 }

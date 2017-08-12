@@ -1,6 +1,7 @@
 package common;
 
 import java.io.ByteArrayOutputStream;
+import java.lang.reflect.Field;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -35,6 +36,7 @@ import android.telephony.TelephonyManager;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.WindowManager;
 
 import common.cache.ACache;
 import common.model.AppMemoryInfo;
@@ -291,6 +293,62 @@ public class CommFunAndroid extends CommFun {
     }
 
     /**
+     * 获取状态栏高度
+     *
+     * @return
+     */
+    public static int getStatusBarHeight(Context context) {
+
+        if (context == null)
+            return 0;
+
+        Class<?> c = null;
+
+        Object obj = null;
+
+        Field field = null;
+
+        int x = 0, sbar = 0;
+
+        try {
+
+            c = Class.forName("com.android.internal.R$dimen");
+
+            obj = c.newInstance();
+
+            field = c.getField("status_bar_height");
+
+            x = Integer.parseInt(field.get(obj).toString());
+
+            sbar = context.getResources().getDimensionPixelSize(x);
+
+        } catch (Exception e1) {
+
+            e1.printStackTrace();
+
+        }
+
+        return sbar;
+    }
+
+    /**
+     * 填充状态栏
+     */
+    public static void fullScreenStatuBar(Activity activity) {
+        if (activity == null )
+            return;
+        try {
+            //代码方式填满状态栏
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                WindowManager.LayoutParams localLayoutParams = activity.getWindow().getAttributes();
+                localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
+            }
+        } catch (Exception ex) {
+
+        }
+    }
+
+    /**
      * 获取手机联网信息
      *
      * @return NetworkInfo :网络信息
@@ -356,9 +414,9 @@ public class CommFunAndroid extends CommFun {
      * @param context
      * @return
      */
-    public boolean isMobileConnected(Context context) {
-        if (context != null) {
-            ConnectivityManager mConnectivityManager = (ConnectivityManager) context
+    public boolean isMobileConnected() {
+        if (mContext != null) {
+            ConnectivityManager mConnectivityManager = (ConnectivityManager) mContext
                     .getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo mMobileNetworkInfo = mConnectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
             if (mMobileNetworkInfo != null) {
@@ -517,7 +575,7 @@ public class CommFunAndroid extends CommFun {
      *
      * @return PackageInfo (versionCode，versionName，packageName，signature)
      */
-    public PackageInfo getPackageInfo() {
+    public static PackageInfo getPackageInfo() {
 
         PackageInfo packageInfo = null;
 
@@ -552,7 +610,7 @@ public class CommFunAndroid extends CommFun {
 
     }
 
-    public WifiInfo getWifiInfo() {
+    public static WifiInfo getWifiInfo() {
         WifiManager wifi = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
         if (wifi != null) {
             WifiInfo info = wifi.getConnectionInfo();
@@ -685,7 +743,7 @@ public class CommFunAndroid extends CommFun {
      * @param bitmap
      * @return
      */
-    public String getPhotoString(Bitmap bitmap) {
+    public static String getPhotoString(Bitmap bitmap) {
         String photoString = "";
         try {
             ByteArrayOutputStream out = new ByteArrayOutputStream();

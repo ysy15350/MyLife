@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/base_form"
+    android:background="@mipmap/bg_login">
+
+    <!--LOGO-->
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="@dimen/dp210"
+        android:layout_height="@dimen/dp162"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp90"
+        android:src="@mipmap/ic_launcher" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp40"
+        android:orientation="vertical">
+
+        <!--用户名-->
+        <LinearLayout style="@style/edit_login_layout">
+
+            <ImageView
+                style="@style/icon_login"
+                android:src="@mipmap/icon_username" />
+
+            <EditText
+                android:id="@+id/et_userName"
+                style="@style/edit_login"
+                android:text="admin" />
+
+        </LinearLayout>
+
+        <!--密码-->
+        <LinearLayout style="@style/edit_login_layout_password">
+
+            <ImageView
+                style="@style/icon_login"
+                android:src="@mipmap/icon_password" />
+
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/edit_login"
+                android:text="123456" />
+
+        </LinearLayout>
+
+        <!--登录按钮-->
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/btn_login" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

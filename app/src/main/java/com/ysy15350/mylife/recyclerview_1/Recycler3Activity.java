@@ -14,12 +14,12 @@ import com.ysy15350.mylife.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class Recycler3Activity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DemoAdapter adpter;
 
     private int colors[] = {android.R.color.holo_blue_bright, android.R.color.black, android.R.color.holo_red_dark};
-    private static final String TAG = "MainActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

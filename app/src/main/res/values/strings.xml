@@ -9,7 +9,12 @@
     <string name="tab3name">信息</string>
     <string name="tab4name">个人</string>
 
+    <!-- 标题右边菜单文本 -->
+    <string name="select_title">筛选</string>
+
     <string name="edit">编辑</string>
+
+    <string name="btn_ok">确认</string>
 
     <string name="previous">上一个</string>
     <string name="next">下一个</string>

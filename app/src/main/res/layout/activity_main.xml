@@ -1,173 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    style="@style/base_form">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/base_form"
+    android:orientation="vertical" >
 
-    <!--顶部-->
+    <FrameLayout
+        android:id="@+id/id_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
     <RelativeLayout
-        style="@style/base_layout"
-        android:layout_height="@dimen/dp225"
-        android:background="@mipmap/bg_main_top">
+        android:id="@+id/ll_message"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp30"
+        android:alpha="0.9"
+        android:background="@color/btn_normal"
+        android:gravity="center"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="你有新消息"
+            android:textColor="@color/white" />
 
         <LinearLayout
-            android:layout_width="@dimen/dp80"
-            android:layout_height="@dimen/dp40"
+            android:id="@+id/ll_close"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical" >
 
             <ImageView
                 android:layout_width="@dimen/dp20"
                 android:layout_height="@dimen/dp20"
-                android:src="@mipmap/icon_edit" />
-
-            <TextView
-                style="@style/text_content"
-                android:layout_marginLeft="@dimen/dp13"
-                android:text="@string/edit" />
-
+                android:src="@mipmap/icon_close" />
         </LinearLayout>
-
-        <ImageView
-            android:id="@+id/img_user"
-            android:layout_width="@dimen/dp90"
-            android:layout_height="@dimen/dp90"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center_horizontal"
-            android:src="@mipmap/icon_head" />
-
-        <TextView
-            style="@style/text_content"
-            android:layout_below="@id/img_user"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/dp20"
-            android:text="@string/default_text" />
-
     </RelativeLayout>
 
-    <!--顶部end-->
+    <include
+        android:id="@+id/form_bottom"
+        layout="@layout/form_bottom" />
 
-    <!--菜单1-->
-    <LinearLayout style="@style/main_menu_row">
-
-        <!--左边区域-->
-        <LinearLayout
-            android:id="@+id/ll_menu1"
-            style="@style/main_menu_col">
-
-            <ImageView
-                style="@style/main_menu_icon"
-                android:src="@mipmap/icon_menu1" />
-
-            <TextView
-                style="@style/text_content"
-                android:layout_marginLeft="@dimen/dp13"
-                android:text="@string/app_name" />
-
-        </LinearLayout>
-
-        <!--分割线-->
-        <View style="@style/view_line_vertical" />
-
-        <!--右边区域-->
-        <LinearLayout
-            android:id="@+id/ll_menu2"
-            style="@style/main_menu_col">
-
-            <ImageView
-                style="@style/main_menu_icon"
-                android:src="@mipmap/icon_menu1" />
-
-            <TextView
-                style="@style/text_content"
-                android:layout_marginLeft="@dimen/dp13"
-                android:text="@string/app_name" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!--菜单2-->
-    <LinearLayout style="@style/main_menu_row">
-
-        <!--左边区域-->
-        <LinearLayout
-            android:id="@+id/ll_menu3"
-            style="@style/main_menu_col">
-
-            <ImageView
-                style="@style/main_menu_icon"
-                android:src="@mipmap/icon_menu1" />
-
-            <TextView
-                style="@style/text_content"
-                android:layout_marginLeft="@dimen/dp13"
-                android:text="@string/app_name" />
-
-        </LinearLayout>
-
-        <!--分割线-->
-        <View style="@style/view_line_vertical" />
-
-        <!--右边区域-->
-        <LinearLayout
-            android:id="@+id/ll_menu4"
-            style="@style/main_menu_col">
-
-            <ImageView
-                style="@style/main_menu_icon"
-                android:src="@mipmap/icon_menu1" />
-
-            <TextView
-                style="@style/text_content"
-                android:layout_marginLeft="@dimen/dp13"
-                android:text="@string/app_name" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!--菜单3-->
-    <LinearLayout style="@style/main_menu_row">
-
-        <!--左边区域-->
-        <LinearLayout
-            android:id="@+id/ll_menu5"
-            style="@style/main_menu_col">
-
-            <ImageView
-                style="@style/main_menu_icon"
-                android:src="@mipmap/icon_menu1" />
-
-            <TextView
-                style="@style/text_content"
-                android:layout_marginLeft="@dimen/dp13"
-                android:text="@string/app_name" />
-
-        </LinearLayout>
-
-        <!--分割线-->
-        <View style="@style/view_line_vertical" />
-
-        <!--右边区域-->
-        <LinearLayout
-            android:id="@+id/ll_menu6"
-            style="@style/main_menu_col">
-
-            <ImageView
-                style="@style/main_menu_icon"
-                android:src="@mipmap/icon_menu1" />
-
-            <TextView
-                style="@style/text_content"
-                android:layout_marginLeft="@dimen/dp13"
-                android:text="@string/app_name" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-</LinearLayout>
+</RelativeLayout>

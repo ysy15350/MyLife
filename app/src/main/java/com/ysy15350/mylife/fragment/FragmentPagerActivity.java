@@ -1,18 +1,17 @@
-package com.ysy15350.mylife.test;
+package com.ysy15350.mylife.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.View;
 
 import com.ysy15350.mylife.R;
-import com.ysy15350.mylife.test.tabs.MainTab1Fragment;
-import com.ysy15350.mylife.test.tabs.MainTab2Fragment;
-import com.ysy15350.mylife.test.tabs.MainTab3Fragment;
-import com.ysy15350.mylife.test.tabs.MainTab4Fragment;
+import com.ysy15350.mylife.fragment.tabs.MainTab1Fragment;
+import com.ysy15350.mylife.fragment.tabs.MainTab2Fragment;
+import com.ysy15350.mylife.fragment.tabs.MainTab3Fragment;
+import com.ysy15350.mylife.fragment.tabs.MainTab4Fragment;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -23,8 +22,8 @@ import base.BaseActivity;
 /**
  * Created by yangshiyou on 2016/11/29.
  */
-@ContentView(R.layout.activity_main_test1)
-public class MainActivity extends BaseActivity {
+@ContentView(R.layout.activity_fragment_pager)
+public class FragmentPagerActivity extends BaseActivity {
 
     @ViewInject(R.id.container)
     private ViewPager mViewPager;

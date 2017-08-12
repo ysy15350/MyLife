@@ -1,44 +1,31 @@
 package com.ysy15350.mylife;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import com.ysy15350.mylife.fragment.FragmentMainActivity;
+import com.ysy15350.mylife.fragment.FragmentPagerActivity;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
-import org.xutils.view.annotation.ViewInject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.net.Socket;
-
+import base.BaseActivity;
+import base.BaseFragmentActivity;
 import base.MVPBaseActivity;
+import common.CommFunAndroid;
 
 @ContentView(R.layout.activity_main)
-public class MainActivity extends MVPBaseActivity<MainViewInterface, MainPresenter> implements MainViewInterface {
-
-
-    @Override
-    protected MainPresenter createPresenter() {
-        // TODO Auto-generated method stub
-        return new MainPresenter(MainActivity.this);
-    }
+public class MainActivity extends BaseFragmentActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        Log.i("main", "onCreate");
+    public void initView() {
 
-        super.onCreate(savedInstanceState);
+
+        //int height = CommFunAndroid.getStatusBarHeight(this);//获取状态栏高度
 
         //代码方式填满状态栏
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -46,28 +33,10 @@ public class MainActivity extends MVPBaseActivity<MainViewInterface, MainPresent
 //            localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
 //        }
 
+        CommFunAndroid.fullScreenStatuBar(this);
+
 
     }
 
-    @Event(value = R.id.ll_menu1)
-    private void ll_menu1Click(View view) {
-
-    }
-
-
-//    /**
-//     * 1. 方法必须私有限定,
-//     * 2. 方法参数形式必须和type对应的Listener接口一致.
-//     * 3. 注解参数value支持数组: value={id1, id2, id3}
-//     * 4. 其它参数说明见{@link org.xutils.event.annotation.Event}类的说明.
-//     **/
-//    @Event(value = R.id.btn_test,
-//            type = View.OnClickListener.class/*可选参数, 默认是View.OnClickListener.class*/)
-//    private void onTestBaidu1Click(View view) {
-//
-//        Toast.makeText(MainActivity.this, "hehe", Toast.LENGTH_SHORT).show();
-//        //mPresenter.signin();
-//
-//    }
 
 }

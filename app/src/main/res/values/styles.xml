@@ -6,7 +6,8 @@
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <item name="colorPrimaryDark">@color/bg_form_head</item>
         <item name="colorAccent">@color/colorAccent</item>
 
     </style>
@@ -25,9 +26,49 @@
     <style name="base_form">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:background">@color/bg_from</item>
+        <item name="android:background">@color/bg_form</item>
         <item name="android:orientation">vertical</item>
     </style>
+
+    <!-- ********************************标题 ******************************** -->
+    <!-- 标题布局 -->
+    <style name="form_title_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp50</item>
+        <item name="android:background">@color/bg_form_head</item>
+    </style>
+
+    <!-- 标题文本 -->
+    <style name="form_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp20</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- 标题_筛选 -->
+    <style name="form_select">
+        <item name="android:layout_width">@dimen/dp80</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <!-- 标题_筛选 -->
+    <style name="form_select_text">
+        <item name="android:layout_width">@dimen/dp80</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/select_title</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp18</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <!-- ********************************标题 end******************************** -->
 
     <!-- 布局基本:相对布局、绝对布局 -->
     <style name="base_layout">
@@ -86,6 +127,79 @@
         <item name="android:textSize">@dimen/sp14</item>
     </style>
 
+
+    <!--登录页面-->
+
+    <!-- 输入框布局 -->
+    <style name="edit_login_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp50</item>
+        <item name="android:layout_marginLeft">@dimen/dp36</item>
+        <item name="android:layout_marginRight">@dimen/dp36</item>
+        <item name="android:layout_marginTop">@dimen/dp25</item>
+        <item name="android:background">@drawable/shape_edittext</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!--密码框    -->
+    <style name="edit_login_layout_password" parent="edit_login_layout">
+        <item name="android:background">@drawable/shape_edittext_password</item>
+    </style>
+
+    <!-- 小图标 -->
+    <style name="icon_login">
+        <item name="android:layout_width">@dimen/dp21</item>
+        <item name="android:layout_height">@dimen/dp21</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/dp24</item>
+    </style>
+
+    <!-- 输入框文本 -->
+    <style name="edit_login">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/dp12</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">#c9e2e6</item>
+        <item name="android:textSize">@dimen/sp18</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- 登录按钮布局 -->
+    <style name="btn_login" parent="edit_login_layout">
+        <item name="android:background">@drawable/shape_btn_login</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">登录</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <!--登录页面end-->
+
+    <!-- 复选框 -->
+    <style name="checkbox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/selector_checkbox</item>
+    </style>
+
+    <!--按钮-->
+    <!-- 按钮 -->
+    <style name="btn_base">
+        <item name="android:background">@drawable/shape_btn</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- 确认按钮、提交按钮等 -->
+    <style name="btn_ok" parent="btn_base">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp58</item>
+        <item name="android:layout_marginLeft">@dimen/dp13</item>
+        <item name="android:layout_marginRight">@dimen/dp13</item>
+        <item name="android:layout_marginTop">@dimen/dp13</item>
+        <item name="android:text">@string/btn_ok</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 
     <!-- view分割线样式 -->
     <style name="view_line">

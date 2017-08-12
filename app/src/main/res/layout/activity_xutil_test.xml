@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_test"
+    style="@style/base_form">
+
+    <LinearLayout style="@style/base_form">
+
+
+        <EditText
+            android:id="@+id/et_url"
+            style="@style/base_edit"
+            android:layout_marginTop="@dimen/dp13"
+            android:text="http://192.168.31.176:8080/interest/appuser/test" />
+
+        <EditText
+            android:id="@+id/et_param"
+            style="@style/base_edit"
+            android:layout_marginTop="@dimen/dp13"
+            android:text="admin" />
+
+        <LinearLayout style="@style/base_layout_horizontal">
+
+            <EditText
+                android:id="@+id/et_cache_time"
+                android:layout_width="@dimen/dp100"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="10"
+                android:textColor="@color/text_content" />
+
+
+            <CheckBox
+                android:id="@+id/cb_cache"
+                style="@style/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp25"
+                android:layout_marginLeft="@dimen/dp13"
+                android:text="使用缓存"
+                android:textColor="@color/text_content" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_ok"
+            style="@style/btn_ok" />
+
+        <TextView
+            android:id="@+id/tv_response_time"
+            style="@style/text_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp13"
+            android:text="响应时间" />
+
+        <TextView
+            android:id="@+id/tv_result"
+            style="@style/text_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp13"
+            android:text="请求结果" />
+
+
+    </LinearLayout>
+</ScrollView>
