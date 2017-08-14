@@ -199,6 +199,8 @@ public class BaseFragmentActivity extends FragmentActivity implements IView {
         setSelect(3);
     }
 
+    FragmentTransaction transaction;
+
     /**
      * 点击事件1:设置tab(改变图片和字体)和2:切换fragment
      *
@@ -206,12 +208,10 @@ public class BaseFragmentActivity extends FragmentActivity implements IView {
      */
     protected void setSelect(int position) {
 
-        setTab(position);
-
         tab_position = position;// 记录已打开选项卡位置，当跳转到登录界面或者其他界面，显示此界面
 
         FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction transaction = fm.beginTransaction();
+        transaction = fm.beginTransaction();
         hideFragment(transaction);
 
         switch (position) {
@@ -262,21 +262,59 @@ public class BaseFragmentActivity extends FragmentActivity implements IView {
         }
 
         transaction.commit();
+
+        setTab(position);
     }
 
     private void hideFragment(FragmentTransaction transaction) {
-        if (fragmentTab1 != null) {
-            transaction.hide(fragmentTab1);
+        // if (fragmentTab1 != null) {
+        // transaction.hide(fragmentTab1);
+        // }
+        // if (fragmentTab2 != null) {
+        // transaction.hide(fragmentTab2);
+        // }
+        // if (fragmentTab3 != null) {
+        // transaction.hide(fragmentTab3);
+        // }
+        if (!fragments.isEmpty()) {
+            for (Fragment fragment : fragments) {
+                transaction.hide(fragment);
+            }
         }
-        if (fragmentTab2 != null) {
-            transaction.hide(fragmentTab2);
+    }
+
+    /**
+     * 显示指定Fragment
+     *
+     * @param fragment
+     */
+    public void showFragment(Fragment fragment) {
+        try {
+            FragmentManager fm = getSupportFragmentManager();
+            transaction = fm.beginTransaction();
+            hideFragment(transaction);
+
+            if (!fragments.contains(fragment)) {
+                fragments.add(fragment);
+                transaction.add(R.id.id_content, fragment);
+            } else {
+                transaction.show(fragment);
+                fragment.onResume();
+            }
+
+            transaction.commit();
+        } catch (Exception e) {
+            // TODO: handle exception
         }
-        if (fragmentTab3 != null) {
-            transaction.hide(fragmentTab3);
-        }
-        if (fragmentTab4 != null) {
-            transaction.hide(fragmentTab4);
-        }
+    }
+
+    /**
+     * 返回到主界面，指定选项卡
+     *
+     * @param index 选项卡
+     */
+    public void backFragment() {
+        setSelect(tab_position);
     }
 
     /**

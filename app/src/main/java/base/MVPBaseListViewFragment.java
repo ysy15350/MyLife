@@ -38,23 +38,6 @@ public abstract class MVPBaseListViewFragment<V, T extends BasePresenter<V>> ext
 
     protected View mContentView;
 
-    /**
-     * 返回
-     */
-    @ViewInject(R.id.btn_back)
-    protected View btn_back;
-
-    /**
-     * 标题
-     */
-    @ViewInject(R.id.tv_form_title)
-    protected TextView tv_form_title;
-
-    /**
-     * 标题栏右侧菜单
-     */
-    @ViewInject(R.id.tv_menu)
-    protected TextView tv_menu;// 头部
 
     /**
      * 下拉刷新列表
@@ -124,8 +107,6 @@ public abstract class MVPBaseListViewFragment<V, T extends BasePresenter<V>> ext
 
     @Override
     public void onLoadMore() {
-        // TODO Auto-generated method stub
-        page++;
         initData(page, pageSize);
     }
 
@@ -151,16 +132,6 @@ public abstract class MVPBaseListViewFragment<V, T extends BasePresenter<V>> ext
 
     }
 
-    /**
-     * 返回
-     *
-     * @param view
-     */
-    @Event(value = R.id.btn_back)
-    private void btn_backClick(View view) {
-        MainActivity mainActivity = (MainActivity) getActivity();
-        mainActivity.backFragment(2);
-    }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

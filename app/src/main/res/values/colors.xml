@@ -59,10 +59,16 @@
     <!--不可用-->
     <color name="btn_disable">#888888</color>
 
-    <!-- 窗体标题栏背景颜色 -->
+    <color name="bg_btn1">#ffb93d</color>
+    <color name="bg_btn2">#ffb900</color>
+    <color name="bg_btn3">#06cb9d</color>
+    <color name="bg_btn4">#f7b034</color>
+
+
+    <!-- 按钮背景颜色 -->
     <color name="bg_btn_normal">#2a2c2d</color>
 
-    <!-- 窗体标题栏背景颜色 -->
+    <!-- 按钮背景颜色 -->
     <color name="bg_btn_disable">#2a2c2d</color>
 
 

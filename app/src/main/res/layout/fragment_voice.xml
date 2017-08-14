@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/base_form">
+
+    <include layout="@layout/form_head" />
+
+
+    <EditText
+        android:id="@+id/et_text"
+        style="@style/base_edit"
+        android:layout_marginTop="@dimen/dp13"
+        android:text="呵呵" />
+
+
+    <RadioGroup
+        android:id="@+id/rg_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp40"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_man"
+            style="@style/checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp13"
+            android:text="男声"
+            android:textColor="@color/text_content" />
+
+        <View style="@style/view_line_vertical" />   
+
+
+        <RadioButton
+            android:id="@+id/rb_woman"
+            style="@style/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp25"
+            android:layout_marginLeft="@dimen/dp13"
+            android:checked="true"
+            android:text="女声"
+            android:textColor="@color/text_content" />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/btn_ok"
+        style="@style/btn_ok" />
+
+
+</LinearLayout>

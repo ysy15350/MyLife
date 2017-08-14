@@ -30,22 +30,27 @@ public class MainTab3Fragment extends MVPBaseListViewFragment<MainTab3ViewInterf
     @Override
     public void onResume() {
         super.onResume();
-        initData(page,pageSize);
+        initData(page, pageSize);
 
     }
 
     @Override
     public void initData(int page, int pageSize) {
         mPresenter.getData();
-        showMsg("initData");
+        showMsg("initData:page=" + page + ",pageSize=" + pageSize);
     }
 
     @Override
     public void bindData(List<String> list) {
 
+
         ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list);
 
         bindListView(mAdapter);
+
+        if (list != null && list.size() > 0) {
+            page++;
+        }
     }
 }
 

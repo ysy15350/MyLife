@@ -258,4 +258,29 @@
     <!-- 微信 -->
 
 
+    <!--popupwindow-->
+    <!-- 从下到上 -->
+    <style name="app_pop">
+        <item name="android:windowEnterAnimation">@anim/pop_up</item>
+        <item name="android:windowExitAnimation">@anim/pop_down</item>
+    </style>
+
+    <!-- 从上到下 -->
+    <style name="app_pop2">
+        <item name="android:windowEnterAnimation">@anim/pop_up2</item>
+        <item name="android:windowExitAnimation">@anim/pop_down2</item>
+    </style>
+
+    <!-- 从左到右 -->
+    <style name="app_pop_1">
+        <item name="android:windowEnterAnimation">@anim/pop_down_1</item>
+        <item name="android:windowExitAnimation">@anim/pop_up_1</item>
+    </style>
+
+    <!-- 可见度从无到有 -->
+    <style name="app_pop_2">
+        <item name="android:windowEnterAnimation">@anim/pop_down_2</item>
+        <item name="android:windowExitAnimation">@anim/pop_up_2</item>
+    </style>
+
 </resources>

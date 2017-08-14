@@ -7,8 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ysy15350.mylife.MainActivity;
 import com.ysy15350.mylife.R;
 
+import org.xutils.view.annotation.Event;
 import org.xutils.x;
 
 import base.adapters.ViewHolder;
@@ -208,4 +210,19 @@ public class BaseFragment extends Fragment implements IView {
             mHolder.setVisibility_VISIBLE(id);
 
     }
+
+    /**
+     * 返回
+     *
+     * @param view
+     */
+    @Event(value = R.id.btn_back)
+    private void btn_backClick(View view) {
+
+        if (getActivity() instanceof MainActivity) {
+            MainActivity mainActivity = (MainActivity) getActivity();
+            mainActivity.backFragment();
+        }
+    }
+
 }

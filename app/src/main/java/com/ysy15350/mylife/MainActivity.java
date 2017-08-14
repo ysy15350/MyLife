@@ -1,5 +1,6 @@
 package com.ysy15350.mylife;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -44,14 +45,9 @@ public class MainActivity extends BaseFragmentActivity {
 
     }
 
-    /**
-     * 返回到主界面，指定选项卡
-     *
-     * @param index 选项卡
-     */
-    public void backFragment(int index) {
-        setSelect(index);
-    }
+
+
+
 
     /**
      * 点击返回按钮间隔时间
