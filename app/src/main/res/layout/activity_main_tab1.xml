@@ -1,83 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:avi="http://schemas.android.com/apk/res-auto"
     style="@style/base_form">
 
-    <include layout="@layout/form_head" />
-
-    <custom_view.scroll_view.PullDownScrollView
-        android:id="@+id/scrollview"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <custom_view.scroll_view.ScrollViewExtend
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <LinearLayout style="@style/base_form">
 
             <LinearLayout
-                android:id="@+id/ll_main"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="@dimen/dp80"
+                android:background="@color/bg_form_head"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/et_url"
-                    style="@style/base_edit"
-                    android:layout_marginTop="@dimen/dp13"
-                    android:text="http://www.ysy15350.com/interest/appuser/test" />
+                <custom_view.avi_loading.AVLoadingIndicatorView
+                    android:id="@+id/loading_1"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="@dimen/dp13"
+                    android:indeterminate="false"
+                    avi:indicator="BallScaleMultiple" />
 
-                <EditText
-                    android:id="@+id/et_param"
-                    style="@style/base_edit"
-                    android:layout_marginTop="@dimen/dp13"
-                    android:text="admin" />
+                <custom_view.avi_loading.AVLoadingIndicatorView
+                    android:id="@+id/loading_2"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="@dimen/dp13"
+                    android:indeterminate="false"
+                    avi:indicator="BallGridBeat" />
 
-                <LinearLayout
-                    style="@style/base_layout_horizontal"
-                    android:layout_marginTop="@dimen/dp13">
+                <custom_view.avi_loading.AVLoadingIndicatorView
+                    android:id="@+id/loading_3"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="@dimen/dp13"
 
-                    <EditText
-                        android:id="@+id/et_cache_time"
-                        android:layout_width="@dimen/dp100"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:text="10"
-                        android:textColor="@color/text_content" />
+                    avi:indicator="BallSpinFadeLoader" />
 
-                    <View style="@style/view_line_vertical" />   
+                <custom_view.avi_loading.AVLoadingIndicatorView
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="@dimen/dp13"
+                    android:indeterminate="false"
+                    avi:indicator="BallBeat" />
 
+                <custom_view.avi_loading.AVLoadingIndicatorView
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="@dimen/dp13"
+                    android:indeterminate="false"
+                    avi:indicator="BallTrianglePath" />
 
-                    <CheckBox
-                        android:id="@+id/cb_cache"
-                        style="@style/checkbox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="@dimen/dp25"
-                        android:layout_marginLeft="@dimen/dp13"
-                        android:text="使用缓存"
-                        android:textColor="@color/text_content" />
+                <custom_view.avi_loading.AVLoadingIndicatorView
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="@dimen/dp13"
+                    android:indeterminate="false"
+                    avi:indicator="BallZigZagDeflect" />
 
-                </LinearLayout>
+                <custom_view.avi_loading.AVLoadingIndicatorView
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="@dimen/dp13"
+                    android:indeterminate="false"
+                    avi:indicator="BallClipRotatePulse" />
 
-                <Button
-                    android:id="@+id/btn_ok"
-                    style="@style/btn_ok" />
+                <custom_view.avi_loading.AVLoadingIndicatorView
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="@dimen/dp13"
+                    android:indeterminate="false"
+                    avi:indicator="BallPulseRise" />
 
-                <TextView
-                    android:id="@+id/tv_response_time"
-                    style="@style/text_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp13"
-                    android:text="响应时间" />
-
-                <TextView
-                    android:id="@+id/tv_result"
-                    style="@style/text_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp13"
-                    android:text="请求结果" />
-
+                <custom_view.avi_loading.AVLoadingIndicatorView
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="@dimen/dp13"
+                    android:indeterminate="false"
+                    avi:indicator="BallPulseSync" />
 
             </LinearLayout>
-        </custom_view.scroll_view.ScrollViewExtend>
-    </custom_view.scroll_view.PullDownScrollView>
+
+
+            <EditText
+                android:id="@+id/et_url"
+                style="@style/base_edit"
+                android:layout_marginTop="@dimen/dp13"
+                android:text="http://www.ysy15350.com/interest/appuser/test" />
+
+            <EditText
+                android:id="@+id/et_param"
+                style="@style/base_edit"
+                android:layout_marginTop="@dimen/dp13"
+                android:text="admin" />
+
+            <LinearLayout
+                style="@style/base_layout_horizontal"
+                android:layout_marginTop="@dimen/dp13">
+
+                <EditText
+                    android:id="@+id/et_cache_time"
+                    android:layout_width="@dimen/dp100"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="10"
+                    android:textColor="@color/text_content" />
+
+                <View style="@style/view_line_vertical" />   
+
+
+                <CheckBox
+                    android:id="@+id/cb_cache"
+                    style="@style/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp25"
+                    android:layout_marginLeft="@dimen/dp13"
+                    android:text="使用缓存"
+                    android:textColor="@color/text_content" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_ok"
+                style="@style/btn_ok" />
+
+            <TextView
+                android:id="@+id/tv_response_time"
+                style="@style/text_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp13"
+                android:text="响应时间" />
+
+            <TextView
+                android:id="@+id/tv_result"
+                style="@style/text_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp13"
+                android:text="请求结果" />
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

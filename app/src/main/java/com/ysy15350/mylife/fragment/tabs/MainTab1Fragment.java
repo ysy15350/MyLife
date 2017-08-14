@@ -21,13 +21,14 @@ import org.xutils.x;
 
 import base.MVPBaseFragment;
 import common.CommFunAndroid;
+import custom_view.avi_loading.AVLoadingIndicatorView;
 import custom_view.scroll_view.PullDownElasticImp;
 import custom_view.scroll_view.PullDownScrollView;
 import custom_view.scroll_view.PullDownScrollView.RefreshListener;
 
 @ContentView(R.layout.activity_main_tab1)
 public class MainTab1Fragment extends MVPBaseFragment<MainTab1ViewInterface, MainTab1Presenter>
-        implements MainTab1ViewInterface, RefreshListener {
+        implements MainTab1ViewInterface {
 
 
     public MainTab1Fragment() {
@@ -39,59 +40,27 @@ public class MainTab1Fragment extends MVPBaseFragment<MainTab1ViewInterface, Mai
         return new MainTab1Presenter(getActivity());
     }
 
+    /**
+     * 本地图片
+     */
+    @ViewInject(R.id.loading_1)
+    private AVLoadingIndicatorView loading_1;
 
-    @ViewInject(R.id.scrollview)
-    private PullDownScrollView mPullDownScrollView;
 
-    String date = "";
 
     @Override
     public void initView() {
 
         setTitle("首页");
 
-        showMsg((mPullDownScrollView == null) + "");
-
-        mPullDownScrollView.setRefreshListener(this);
-        mPullDownScrollView.setPullDownElastic(new PullDownElasticImp(getActivity()));
-
-        updateScrollverHeader();
+        
     }
 
     @Override
-    public void onRefresh(PullDownScrollView view) {
-
-        updateScrollverHeader();
+    public void onResume() {
+        super.onResume();
+        showMsg("onResume0");
     }
-
-    private void updateScrollverHeader() {
-
-        date = CommFunAndroid.getDateString("yyyy-MM-dd HH:mm:ss");
-
-        showMsg(date);
-
-        mPullDownScrollView.finishRefresh("上次刷新时间:" + date);
-    }
-
-
-    /**
-     * 接口地址
-     */
-    @ViewInject(R.id.et_url)
-    private EditText et_url;
-
-    /**
-     * 接口参数
-     */
-    @ViewInject(R.id.et_param)
-    private EditText et_param;
-
-    /**
-     * 缓存事件(s)
-     */
-    @ViewInject(R.id.et_cache_time)
-    private EditText et_cache_time;
-
 
     /**
      * 是否缓存
@@ -99,12 +68,6 @@ public class MainTab1Fragment extends MVPBaseFragment<MainTab1ViewInterface, Mai
     @ViewInject(R.id.cb_cache)
     private CheckBox checkBox;
 
-
-    /**
-     * 结果
-     */
-    @ViewInject(R.id.tv_result)
-    private TextView tv_result;
 
     /**
      * 确认按钮点击事件
@@ -136,7 +99,7 @@ public class MainTab1Fragment extends MVPBaseFragment<MainTab1ViewInterface, Mai
 
         mHolder.setText(R.id.tv_result, data);//多个
 
-        showMsg(data);
+        //showMsg(data);
     }
 
 

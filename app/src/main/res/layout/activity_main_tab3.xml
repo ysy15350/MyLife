@@ -4,4 +4,11 @@
 
     <include layout="@layout/form_head" />
 
+    <custom_view.xlistview.XListView
+        android:id="@+id/xListView"
+        android:layout_width="match_parent"
+        android:background="@color/bg_form_head"
+        android:layout_height="match_parent"
+        android:divider="@color/devider_color" />
+
 </LinearLayout>

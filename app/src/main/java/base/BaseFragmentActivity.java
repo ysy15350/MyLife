@@ -20,6 +20,9 @@ import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import base.adapters.ViewHolder;
 import common.CommFunMessage;
 
@@ -53,10 +56,13 @@ public class BaseFragmentActivity extends FragmentActivity implements IView {
     @ViewInject(R.id.img_tab4)
     private View img_tab4;
 
+    List<Fragment> fragments = new ArrayList<Fragment>();
+
     Fragment fragmentTab1;
     Fragment fragmentTab2;
     Fragment fragmentTab3;
     Fragment fragmentTab4;
+
 
     /**
      * 显示指定选项卡
@@ -68,7 +74,7 @@ public class BaseFragmentActivity extends FragmentActivity implements IView {
         super.onCreate(savedInstanceState);
         x.view().inject(this);
 
-        mContext=this;
+        mContext = this;
 
         mContentView = getWindow().getDecorView();
 
@@ -212,15 +218,17 @@ public class BaseFragmentActivity extends FragmentActivity implements IView {
             case 0:
                 if (fragmentTab1 == null) {
                     fragmentTab1 = new MainTab1Fragment();
+                    fragments.add(fragmentTab1);
                     transaction.add(R.id.id_content, fragmentTab1);
                 } else {
                     transaction.show(fragmentTab1);
+                    fragmentTab1.onResume();
                 }
-                fragmentTab1.onResume();
                 break;
             case 1:
                 if (fragmentTab2 == null) {
                     fragmentTab2 = new MainTab2Fragment();
+                    fragments.add(fragmentTab2);
                     transaction.add(R.id.id_content, fragmentTab2);
                 } else {
                     transaction.show(fragmentTab2);
@@ -229,20 +237,24 @@ public class BaseFragmentActivity extends FragmentActivity implements IView {
             case 2:
                 if (fragmentTab3 == null) {
                     fragmentTab3 = new MainTab3Fragment();
+                    fragments.add(fragmentTab3);
                     transaction.add(R.id.id_content, fragmentTab3);
                 } else {
                     transaction.show(fragmentTab3);
+                    fragmentTab3.onResume();
                 }
-                fragmentTab3.onResume();
+
                 break;
             case 3:
                 if (fragmentTab4 == null) {
                     fragmentTab4 = new MainTab4Fragment();
+                    fragments.add(fragmentTab4);
                     transaction.add(R.id.id_content, fragmentTab4);
                 } else {
                     transaction.show(fragmentTab4);
+                    fragmentTab4.onResume();
                 }
-                fragmentTab4.onResume();
+
                 break;
 
             default:

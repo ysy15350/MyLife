@@ -9,6 +9,14 @@
     <string name="tab3name">信息</string>
     <string name="tab4name">个人</string>
 
+    <!-- 下拉刷新 -->
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+
     <!-- 标题右边菜单文本 -->
     <string name="select_title">筛选</string>
 

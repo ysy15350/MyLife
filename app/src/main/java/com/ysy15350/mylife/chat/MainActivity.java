@@ -87,7 +87,7 @@ public class MainActivity extends MVPBaseActivity<MainViewInterface, MainPresent
         String time = CommFunAndroid.getDateString("yyyy-MM-dd HH:mm:ss");
         map.put("description", time);
         map.put("icon", R.mipmap.icon_time);
-        mapList.add(map);
+        mapList.add(0, map);
 
         list.add(0, text);
         bindMsg();

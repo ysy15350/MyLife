@@ -111,7 +111,9 @@ public class MainPresenter extends BasePresenter<MainViewInterface> implements E
                 public void run() {
 
                     EMMessageBody msgBody = message.getBody();
+
                     if(msgBody instanceof  EMTextMessageBody){
+
                         EMTextMessageBody textMessageBody=(EMTextMessageBody)msgBody;
 
                     }

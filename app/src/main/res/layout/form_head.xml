@@ -4,9 +4,7 @@
     style="@style/form_title_layout"
     android:layout_height="wrap_content">
 
-    <RelativeLayout
-        style="@style/form_title_layout"
-        android:layout_marginTop="@dimen/dp30">
+    <RelativeLayout style="@style/form_title_layout">
 
 
         <TextView

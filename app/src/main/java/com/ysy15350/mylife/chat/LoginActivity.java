@@ -24,12 +24,14 @@ public class LoginActivity extends MVPBaseActivity<LoginViewInterface, LoginPres
     protected LoginPresenter createPresenter() {
         // TODO Auto-generated method stub
         return new LoginPresenter(LoginActivity.this);
+
+
     }
+
 
 
     @Event(value = R.id.btn_login)
     private void btn_loginClick(View view) {
-
 
         String userName = mHolder.getViewText(R.id.et_userName);
         String password = mHolder.getViewText(R.id.et_password);
