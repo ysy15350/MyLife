@@ -3,6 +3,7 @@ package base;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,8 @@ import org.xutils.x;
 import base.adapters.ViewHolder;
 import common.CommFunAndroid;
 import common.CommFunMessage;
+import common.ExitApplication;
+import common.model.ScreenInfo;
 
 /**
  * Created by yangshiyou on 2016/11/29.
@@ -30,7 +33,7 @@ public class BaseFragment extends Fragment implements IView {
     /**
      * 控件ViewGroup
      */
-    protected View mContentView;
+    protected ViewGroup mContentView;
 
     protected ViewHolder mHolder;
 
@@ -50,7 +53,7 @@ public class BaseFragment extends Fragment implements IView {
 
         mContext = getActivity();
 
-        mContentView = x.view().inject(this, inflater, container);
+        mContentView = (ViewGroup)x.view().inject(this, inflater, container);
 
         mHolder = ViewHolder.get(getActivity(), mContentView);
 
@@ -66,6 +69,7 @@ public class BaseFragment extends Fragment implements IView {
             x.view().inject(this, this.getView());
         }
     }
+
 
     /**
      * 初始化，1：initView；2：readCahce；3：loadData；4：bindData
@@ -169,7 +173,7 @@ public class BaseFragment extends Fragment implements IView {
     public void showMsg(String msg) {
         if (msg == null)
             return;
-        CommFunMessage.ShowMsgBox(mContext, msg);
+        CommFunMessage.showMsgBox(mContext, msg);
     }
 
     @Override
@@ -218,11 +222,18 @@ public class BaseFragment extends Fragment implements IView {
      */
     @Event(value = R.id.btn_back)
     private void btn_backClick(View view) {
+        back();
+    }
 
+    /**
+     * 返回
+     */
+    protected void back() {
         if (getActivity() instanceof MainActivity) {
             MainActivity mainActivity = (MainActivity) getActivity();
             mainActivity.backFragment();
         }
     }
+
 
 }

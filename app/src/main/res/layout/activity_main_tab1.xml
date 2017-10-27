@@ -12,7 +12,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp80"
-                android:background="@color/bg_form_head"
+                android:background="@color/white"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -89,7 +89,7 @@
                 android:id="@+id/et_url"
                 style="@style/base_edit"
                 android:layout_marginTop="@dimen/dp13"
-                android:text="http://www.ysy15350.com/interest/appuser/test" />
+                android:text="http://192.168.31.176:8080/api/getData" />
 
             <EditText
                 android:id="@+id/et_param"
@@ -124,8 +124,30 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btn_data_binding"
+                style="@style/btn_ok"
+                android:text="DataBinding" />
+
+            <Button
                 android:id="@+id/btn_ok"
                 style="@style/btn_ok" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btn_showSoftInput"
+                    style="@style/btn_rectangle"
+                    android:layout_weight="1"
+                    android:text="显示键盘" />
+
+                <Button
+                    android:id="@+id/btn_hideSoftInput"
+                    style="@style/btn_rectangle_1"
+                    android:layout_weight="1"
+                    android:text="隐藏键盘" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_response_time"

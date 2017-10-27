@@ -1,16 +1,5 @@
 package common;
 
-import java.io.ByteArrayOutputStream;
-import java.lang.reflect.Field;
-import java.net.Inet4Address;
-import java.net.InetAddress;
-import java.net.NetworkInterface;
-import java.util.Enumeration;
-import java.util.HashSet;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.MemoryInfo;
@@ -36,7 +25,20 @@ import android.telephony.TelephonyManager;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
+
+import java.io.ByteArrayOutputStream;
+import java.lang.reflect.Field;
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.Enumeration;
+import java.util.HashSet;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import common.cache.ACache;
 import common.model.AppMemoryInfo;
@@ -57,7 +59,11 @@ public class CommFunAndroid extends CommFun {
      */
     public static CommFunAndroid commFunAndroid = new CommFunAndroid();
 
-    public static CommFunAndroid GetInstance(Context context, Handler handler) {
+    public static CommFunAndroid getInstance(Context context){
+        return getInstance(context,null);
+    }
+
+    public static CommFunAndroid getInstance(Context context, Handler handler) {
 
         if (commFunAndroid == null) {
             commFunAndroid = new CommFunAndroid();
@@ -249,6 +255,42 @@ public class CommFunAndroid extends CommFun {
 
         return appMemoryInfo;
 
+    }
+
+    /**
+     * 显示键盘
+     *
+     * @param view
+     */
+    public static void showSoftInput(View view) {
+        if (mContext != null) {
+            InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.showSoftInput(view, InputMethodManager.SHOW_FORCED);
+        }
+    }
+
+    /**
+     * 隐藏键盘
+     *
+     * @param view
+     */
+    public static void hideSoftInput(View view) {
+        if (mContext != null) {
+            InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0); // 强制隐藏键盘
+        }
+    }
+
+    /**
+     * 切换键盘
+     *
+     * @param view
+     */
+    public static void toggleSoftInput() {
+        if (mContext != null) {
+            InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+        }
     }
 
     private static ScreenInfo mScreenInfo;

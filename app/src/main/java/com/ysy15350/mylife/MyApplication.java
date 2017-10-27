@@ -14,6 +14,8 @@ import org.xutils.x;
 import java.util.Iterator;
 import java.util.List;
 
+import common.CommFunAndroid;
+
 
 /**
  * Created by yangshiyou on 2016/11/23.
@@ -34,6 +36,8 @@ public class MyApplication extends Application {
 
         x.Ext.init(this);
         x.Ext.setDebug(BuildConfig.DEBUG); // 是否输出debug日志, 开启debug会影响性能.
+
+        CommFunAndroid.getInstance(this);
 
         initEasemob();
 

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/base_form">
+
+    <!--<include layout="@layout/form_head" />-->
+    <!--http://192.168.31.176:8080/interest/video.mp4-->
+    <!--http://192.168.31.176:8080/interest/video1.mp4-->
+    <!--http://www.w3school.com.cn/example/html5/mov_bbb.mp4-->
+    <!--https://media.w3.org/2010/05/sintel/trailer.mp4-->
+
+
+    <FrameLayout
+        android:id="@+id/video_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp200"
+        android:background="@android:color/black">
+
+        <com.universalvideoview.UniversalVideoView
+            android:id="@+id/videoView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            app:uvv_autoRotation="true"
+            app:uvv_fitXY="false" />
+
+        <com.universalvideoview.UniversalMediaController
+            android:id="@+id/media_controller"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            app:uvv_scalable="true" />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_mask"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp200">
+
+        <ImageView
+            android:id="@+id/img_mask"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp200"
+            android:scaleType="fitXY"
+            android:src="@mipmap/bg_main_top" />
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="@dimen/dp80"
+            android:layout_height="@dimen/dp80"
+            android:layout_centerInParent="true"
+            android:background="@mipmap/icon_start" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/video_layout"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/et_url"
+            style="@style/base_edit"
+            android:layout_marginTop="@dimen/dp13"
+            android:text="http://www.ysy15350.com/video1.mp4" />
+
+
+        <TextView
+            android:id="@+id/introduction"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="this is video introduciton ......"
+            android:textColor="@color/text_content" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

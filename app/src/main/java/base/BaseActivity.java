@@ -10,6 +10,7 @@ import org.xutils.x;
 
 import base.adapters.ViewHolder;
 import common.CommFunMessage;
+import common.ExitApplication;
 
 /**
  * Created by yangshiyou on 2016/11/29.
@@ -43,6 +44,8 @@ public class BaseActivity extends AppCompatActivity implements IView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         x.view().inject(this);
+
+        ExitApplication.getInstance().addActivity(this);// 添加当前Activity
 
         mContext = this;
 
@@ -125,7 +128,7 @@ public class BaseActivity extends AppCompatActivity implements IView {
     public void showMsg(String msg) {
         if (msg == null)
             return;
-        CommFunMessage.ShowMsgBox(mContext, msg);
+        CommFunMessage.showMsgBox(mContext, msg);
     }
 
     @Override

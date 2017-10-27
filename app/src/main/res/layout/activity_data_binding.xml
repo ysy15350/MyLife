@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="user"
+            type="model.UserInfo" />
+    </data>
+
+    <LinearLayout style="@style/base_form">
+
+        <EditText
+            android:id="@+id/et_userName"
+            style="@style/base_edit"
+            android:layout_marginTop="@dimen/dp13"
+            android:text="@{user.name}" />
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:onClick="btn_okClick"
+            style="@style/btn_ok" />
+
+        <TextView
+            android:id="@+id/tv_result"
+            style="@style/text_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp13"
+            android:text="@{user.name}" />
+
+
+    </LinearLayout>
+
+</layout>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <!-- 登录文本框 -->
+    <!-- 登录文本框,两边半圆 -->
 
     <corners android:radius="@dimen/dp50" />
 

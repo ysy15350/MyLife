@@ -1,12 +1,9 @@
 package com.ysy15350.mylife.fragment.tabs;
 
-import com.ysy15350.mylife.R;
-
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.ysy15350.mylife.R;
 
 import org.xutils.common.util.DensityUtil;
 import org.xutils.image.ImageOptions;
@@ -16,7 +13,6 @@ import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import base.MVPBaseFragment;
-import common.CommFunAndroid;
 
 @ContentView(R.layout.activity_main_tab2)
 public class MainTab2Fragment extends MVPBaseFragment<MainTab2ViewInterface, MainTab2Presenter>
@@ -142,10 +138,9 @@ public class MainTab2Fragment extends MVPBaseFragment<MainTab2ViewInterface, Mai
 
         // x.image().bind(imageTest,"https://file.longkin.net/Uploads/User/-1/c8b6ff92-4e63-4f39-b664-819b3acf4ec2.jpg", imageOptions);
 
+
         x.image().bind(img_local, "assets://bg_main_top.png", imageOptions);//本地图片
 
-
-        x.image().bind(img_web, "http://www.ysy15350.com:80/uploadFiles/uploadImgs/20170719/f0c2db57c552470ca24965108963c964.jpg", imageOptions);//本地图片
 
         x.image().bind(img_gif,
                 "assets://test.gif",
@@ -155,6 +150,24 @@ public class MainTab2Fragment extends MVPBaseFragment<MainTab2ViewInterface, Mai
         x.image().bind(img_web_gif,
                 "http://img3.3lian.com/2006/013/08/20051103121023912.gif",
                 imageOptions);//网络gif
+
+
+        imageOptions = new ImageOptions.Builder()
+                .setSize(DensityUtil.dip2px(120), DensityUtil.dip2px(120))
+                .setRadius(DensityUtil.dip2px(5)).setCircular(true)
+                // 如果ImageView的大小不是定义为wrap_content, 不要crop.
+                .setCrop(true) //是否对图片进行裁剪,很多时候设置了合适的scaleType也不需要它.
+                // 加载中或错误图片的ScaleType
+                //.setPlaceholderScaleType(ImageView.ScaleType.MATRIX)
+                // 是否忽略GIF格式的图片
+                .setIgnoreGif(false)
+                .setImageScaleType(ImageView.ScaleType.CENTER_CROP)
+                .setLoadingDrawableId(R.mipmap.ic_launcher)
+                .setFailureDrawableId(R.mipmap.ic_launcher)
+                .build();
+
+        x.image().bind(img_web, "http://www.ysy15350.com:80/uploadFiles/uploadImgs/20170719/f0c2db57c552470ca24965108963c964.jpg", imageOptions);//本地图片
+
 
     }
 
@@ -172,7 +185,8 @@ public class MainTab2Fragment extends MVPBaseFragment<MainTab2ViewInterface, Mai
         if (level == 4)
             level = 0;
         level++;
-        img_level.getDrawable().setLevel(level);// 1:待机；2：选中；3：运行；4：未连接
+        img_level.setImageLevel(level);// 1:待机；2：选中；3：运行；4：未连接
+        //img_level.getDrawable().setLevel(level);// 1:待机；2：选中；3：运行；4：未连接
 
 
     }

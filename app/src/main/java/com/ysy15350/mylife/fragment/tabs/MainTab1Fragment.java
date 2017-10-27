@@ -1,30 +1,20 @@
 package com.ysy15350.mylife.fragment.tabs;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.content.Intent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ysy15350.mylife.R;
+import com.ysy15350.mylife.data_binding.DataBindingActivity;
 
-import org.xutils.common.util.DensityUtil;
-import org.xutils.image.ImageOptions;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
-import org.xutils.x;
 
 import base.MVPBaseFragment;
 import common.CommFunAndroid;
+import common.CommFunMessage;
 import custom_view.avi_loading.AVLoadingIndicatorView;
-import custom_view.scroll_view.PullDownElasticImp;
-import custom_view.scroll_view.PullDownScrollView;
-import custom_view.scroll_view.PullDownScrollView.RefreshListener;
 
 @ContentView(R.layout.activity_main_tab1)
 public class MainTab1Fragment extends MVPBaseFragment<MainTab1ViewInterface, MainTab1Presenter>
@@ -40,6 +30,7 @@ public class MainTab1Fragment extends MVPBaseFragment<MainTab1ViewInterface, Mai
         return new MainTab1Presenter(getActivity());
     }
 
+
     /**
      * 本地图片
      */
@@ -47,19 +38,35 @@ public class MainTab1Fragment extends MVPBaseFragment<MainTab1ViewInterface, Mai
     private AVLoadingIndicatorView loading_1;
 
 
-
     @Override
     public void initView() {
 
         setTitle("首页");
 
-        
+
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        showMsg("onResume0");
+    /**
+     * 显示键盘
+     *
+     * @param view
+     */
+    @Event(value = R.id.btn_showSoftInput)
+    private void btn_showSoftInputClick(View view) {
+        showMsg("显示键盘");
+
+        CommFunAndroid.showSoftInput(mHolder.getView(R.id.et_url));
+    }
+
+    /**
+     * 隐藏键盘
+     *
+     * @param view
+     */
+    @Event(value = R.id.btn_hideSoftInput)
+    private void btn_hideSoftInputClick(View view) {
+        showMsg("隐藏键盘");
+        CommFunAndroid.hideSoftInput(view);
     }
 
     /**
@@ -91,8 +98,17 @@ public class MainTab1Fragment extends MVPBaseFragment<MainTab1ViewInterface, Mai
 
     }
 
+    @Event(value = R.id.btn_data_binding)
+    private void btn_data_bindingClick(View view) {
+        startActivity(new Intent(getActivity(), DataBindingActivity.class));
+    }
+
+
     @Override
     public void bindData(String data) {
+
+        CommFunMessage.showCustomMsg(mContext, R.mipmap.icon_success, "成功");
+
         String time = CommFunAndroid.getDateString("yyyy-MM-dd HH:mm:ss");
 
         setViewText(R.id.tv_response_time, time);//单个
@@ -103,4 +119,9 @@ public class MainTab1Fragment extends MVPBaseFragment<MainTab1ViewInterface, Mai
     }
 
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        CommFunAndroid.hideSoftInput(mContentView);
+    }
 }

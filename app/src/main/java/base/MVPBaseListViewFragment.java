@@ -1,22 +1,20 @@
 package base;
 
-import org.xutils.x;
-import org.xutils.view.annotation.Event;
-import org.xutils.view.annotation.ViewInject;
-
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView.OnItemClickListener;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
 
-import com.ysy15350.mylife.MainActivity;
 import com.ysy15350.mylife.R;
+
+import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
 
 import base.adapters.ViewHolder;
 import common.CommFunAndroid;
@@ -47,6 +45,8 @@ public abstract class MVPBaseListViewFragment<V, T extends BasePresenter<V>> ext
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        super.onCreateView(inflater,container,savedInstanceState);
 
         mPresenter = createPresenter();
 
@@ -127,6 +127,14 @@ public abstract class MVPBaseListViewFragment<V, T extends BasePresenter<V>> ext
             } else {
                 mAdapter.notifyDataSetChanged();
                 xListView.stopLoadMore();
+            }
+
+            //listview布局动画
+            if (mContext != null) {
+                LayoutAnimationController lac = new LayoutAnimationController(AnimationUtils.loadAnimation(mContext, R.anim.zoom_in));
+                lac.setOrder(LayoutAnimationController.ORDER_NORMAL);
+                xListView.setLayoutAnimation(lac);
+                xListView.startLayoutAnimation();
             }
         }
 

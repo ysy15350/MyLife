@@ -19,7 +19,12 @@ public class MainTab3Presenter extends BasePresenter<MainTab3ViewInterface> {
 
     public void getData() {
         List<String> list = new ArrayList<String>();
-        list.add("test");
+        list.add("test1");
+        list.add("test2");
+        list.add("test3");
+        list.add("test4");
+        list.add("test5");
+        list.add("test6");
         mView.bindData(list);
     }
 

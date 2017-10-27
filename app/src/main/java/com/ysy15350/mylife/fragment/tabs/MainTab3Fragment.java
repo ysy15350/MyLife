@@ -1,16 +1,13 @@
 package com.ysy15350.mylife.fragment.tabs;
 
-import com.ysy15350.mylife.R;
-
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
+
+import com.ysy15350.mylife.R;
 
 import org.xutils.view.annotation.ContentView;
 
 import java.util.List;
 
-import base.MVPBaseFragment;
 import base.MVPBaseListViewFragment;
 
 @ContentView(R.layout.activity_main_tab3)
@@ -30,6 +27,7 @@ public class MainTab3Fragment extends MVPBaseListViewFragment<MainTab3ViewInterf
     @Override
     public void onResume() {
         super.onResume();
+        page = 1;
         initData(page, pageSize);
 
     }
@@ -37,7 +35,6 @@ public class MainTab3Fragment extends MVPBaseListViewFragment<MainTab3ViewInterf
     @Override
     public void initData(int page, int pageSize) {
         mPresenter.getData();
-        showMsg("initData:page=" + page + ",pageSize=" + pageSize);
     }
 
     @Override
@@ -49,6 +46,7 @@ public class MainTab3Fragment extends MVPBaseListViewFragment<MainTab3ViewInterf
         bindListView(mAdapter);
 
         if (list != null && list.size() > 0) {
+
             page++;
         }
     }

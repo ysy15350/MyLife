@@ -1,17 +1,12 @@
 package com.ysy15350.mylife.chat;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ysy15350.mylife.R;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
-import org.xutils.view.annotation.ViewInject;
 
 import base.MVPBaseActivity;
 import common.CommFunAndroid;
@@ -58,5 +53,6 @@ public class LoginActivity extends MVPBaseActivity<LoginViewInterface, LoginPres
         }
         showMsg(result);
     }
+
 
 }

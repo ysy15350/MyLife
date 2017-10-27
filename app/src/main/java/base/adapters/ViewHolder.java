@@ -4,7 +4,6 @@ package base.adapters;
  * Created by yangshiyou on 2017/7/10.
  */
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -16,6 +15,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import common.CommFunAndroid;
+import common.image.ImageLoader;
 
 
 /**
@@ -31,6 +33,8 @@ public class ViewHolder {
     private View mConvertView;
 
     private Context mContext;
+
+    private ImageLoader imageLoader;
 
 
     /**
@@ -299,7 +303,9 @@ public class ViewHolder {
      */
     public ViewHolder setImageURL(int viewId, String url) {
         ImageView imageView = getView(viewId);
-
+        if (imageLoader != null && imageView != null && !CommFunAndroid.isNullOrEmpty(url)) {
+            imageLoader.displayImage(imageView, url);
+        }
 
         return this;
     }
@@ -316,15 +322,12 @@ public class ViewHolder {
     public ViewHolder setImageURL(int viewId, String url, int loadingImageResId, int loadfailImageResid) {
         ImageView imageView = getView(viewId);
 
-
+        if (imageLoader != null && imageView != null && !CommFunAndroid.isNullOrEmpty(url)) {
+            imageLoader.displayImage(imageView, url, loadingImageResId, loadfailImageResid);
+        }
         return this;
     }
 
-    public ViewHolder setImageFid(int viewId, String fid, int loadingImageResId, int loadfailImageResid) {
-
-
-        return this;
-    }
 
     public ViewHolder setVisibility_VISIBLE(int viewId) {
         View view = getView(viewId);

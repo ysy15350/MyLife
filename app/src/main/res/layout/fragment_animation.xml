@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/base_form">
+
+    <include layout="@layout/form_head" />
+
+
+    <Button
+        android:id="@+id/btn_Scale"
+        style="@style/btn_rectangle"
+        android:text="Scale(缩放动画)" />
+
+    <Button
+        android:id="@+id/btn_Alpa"
+        style="@style/btn_rectangle_1"
+        android:text="Alpa(透明度动画)" />
+
+    <Button
+        android:id="@+id/btn_Rotate"
+        style="@style/btn_rectangle"
+        android:text="Rotate(旋转动画)" />
+
+    <Button
+        android:id="@+id/btn_Translate"
+        style="@style/btn_rectangle_1"
+        android:text="Translate(位移动画)" />
+
+    <Button
+        android:id="@+id/btn_Translate_1"
+        style="@style/btn_rectangle"
+        android:text="位移动画（代码）" />
+
+    <Button
+        android:id="@+id/btn_continue"
+        style="@style/btn_rectangle_1"
+        android:text="多个动画（配置文件）" />
+
+    <Button
+        android:id="@+id/btn_continue_repeat"
+        style="@style/btn_rectangle"
+        android:text="连续动画（重复动画次数）" />
+
+
+    <Button
+        android:id="@+id/btn_continue_listener"
+        style="@style/btn_rectangle_1"
+        android:text="两个动画（监听）" />
+
+    <Button
+        android:id="@+id/btn_change_activity"
+        style="@style/btn_rectangle"
+        android:text="页面切换动画（Activity）" />
+
+    <Button
+        android:id="@+id/btn_frame"
+        style="@style/btn_rectangle_1"
+        android:text="帧动画（图片切换）" />
+
+
+    <ImageView
+        android:id="@+id/img_animation"
+        android:layout_width="@dimen/dp200"
+        android:layout_height="@dimen/dp100"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp20"
+        android:src="@mipmap/ic_launcher" />
+
+
+</LinearLayout>

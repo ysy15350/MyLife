@@ -201,6 +201,25 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+
+    <!--矩形按钮-->
+    <style name="btn_rectangle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp45</item>
+        <item name="android:layout_marginStart">@dimen/dp13</item>
+        <item name="android:layout_marginEnd">@dimen/dp13</item>
+        <item name="android:layout_marginTop">@dimen/dp13</item>
+        <item name="android:background">@color/bg_btn2</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <!--矩形按钮1-->
+    <style name="btn_rectangle_1" parent="btn_rectangle">
+        <item name="android:background">@color/bg_btn3</item>
+    </style>
+
     <!-- view分割线样式 -->
     <style name="view_line">
         <item name="android:layout_width">match_parent</item>
@@ -282,5 +301,6 @@
         <item name="android:windowEnterAnimation">@anim/pop_down_2</item>
         <item name="android:windowExitAnimation">@anim/pop_up_2</item>
     </style>
+
 
 </resources>

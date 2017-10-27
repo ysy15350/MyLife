@@ -8,16 +8,7 @@ import org.xutils.ex.HttpException;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-
-import api.ApiCallBack;
-import api.IUser;
-import api.impl.UserApi;
-import api.model.Response;
 import base.BasePresenter;
-import common.utils.JsonConvertor;
-import common.utils.StringUtils;
 
 public class MainTab1Presenter extends BasePresenter<MainTab1ViewInterface> {
 
@@ -35,9 +26,11 @@ public class MainTab1Presenter extends BasePresenter<MainTab1ViewInterface> {
         RequestParams params = new RequestParams(url);
         //params.setSslSocketFactory(...); // 设置ssl
 
-        params.addQueryStringParameter("param", param);
+        params.addQueryStringParameter("format", param);
 
         params.setCacheMaxAge(cacheTime * 1000);//缓存时间(秒)
+
+        params.setAsJsonContent(true);// 以JSON方式发送
 
 
         x.http().post(params, new Callback.CacheCallback<String>() {
